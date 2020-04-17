@@ -1,13 +1,31 @@
 import React from 'react';
-import { Text, View } from "react-native";
+import { Text, View, ScrollView, Image } from "react-native";
 
 export default class AppView{
 
-    AppHome (props: any){
+    state = {};
+
+    WeatherIcon (props:any){
         return(
             <View>
-                <Text>Hello World</Text>
+                <Image source={props.src} />
             </View>
+        )
+    }
+
+    AppHeader (props: any){
+        return(
+            <View>
+                
+            </View>
+        )
+    }
+
+    AppHome (props: any){
+        return(
+            <ScrollView>
+                <View></View>
+            </ScrollView>
         )
     }
 }

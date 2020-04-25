@@ -1,31 +1,58 @@
-import React from 'react';
-import { Text, View, ScrollView, Image } from "react-native";
+import React, { useCallback } from 'react';
+import { View, ScrollView, Image, Button, Linking, SafeAreaView, StyleSheet, Alert } from "react-native";
+import { Text, Header } from 'react-native-elements';
 
 export default class AppView{
 
     state = {};
 
+    OpenSettingsButton(props: any){
+        const handlePress = useCallback(async () =>{
+            await Linking.openSettings();
+        }, []);
+
+        return(
+            <Button title={props.title} onPress={handlePress}/>
+        )
+    }
+
     WeatherIcon (props:any){
         return(
-            <View>
+            <View nativeID="current_temp_icon">
                 <Image source={props.src} />
             </View>
         )
     }
 
-    AppHeader (props: any){
+    AppHeader (){
         return(
-            <View>
-                
-            </View>
+            <Header
+                leftComponent={{icon: 'settings'}}
+                centerComponent={{}}
+                rightComponent={{}}
+            >
+            </Header>
         )
     }
 
     AppHome (props: any){
         return(
-            <ScrollView>
-                <View></View>
-            </ScrollView>
+            <SafeAreaView>
+                <this.AppHeader />
+                <ScrollView nativeID="temp_display" horizontal={true}></ScrollView>
+            </SafeAreaView>
         )
     }
+
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: "column"
+    },
+    image: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+    }
+})

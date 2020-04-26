@@ -30,7 +30,6 @@ const ShareLocationButton = () => {
     )
 }
 
-
 const SearchLocations = () => {
     return(
         <View>
@@ -79,7 +78,6 @@ export default class LocationsDisplay extends React.Component{
     render(){
         return(
             <View>
-                <Text></Text>
             </View>
         )
     }

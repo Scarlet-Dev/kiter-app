@@ -39,6 +39,27 @@ const SearchLocations = () => {
     )
 }
 
+const DATA: any = []
+const LocationsDetailsItem = (title: any) => {
+    return(
+        <View>
+            <Text>{title}</Text>
+        </View>
+    )
+}
+
+const LocationDetails = () => {
+    return(
+        <View>
+            <SectionList 
+            sections={DATA}
+            keyExtractor={(item, index) => item + index}
+            renderItem={ ({item}) => <LocationsDetailsItem title={""}/>}
+            renderSectionHeader={ ({ section: {title} }) => <Text>{title}</Text> }
+            />
+        </View>
+    )
+}
 const list: any = []
 const LocationsList = () => {
     return(

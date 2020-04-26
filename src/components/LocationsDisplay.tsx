@@ -2,6 +2,34 @@ import React from 'react';
 import { View, SectionList, Share, Alert } from 'react-native';
 import {Text, Input, ListItem, Icon} from 'react-native-elements'
 
+const ShareLocationButton = () => {
+    return(
+        <Icon name='share' onPressIn={async () => {
+            try{
+                const result = await Share.share({
+                    message: 'Location shared'
+                });
+
+                if(result.action === Share.sharedAction){
+                    if(result.activityType){
+
+                    }
+                    else{
+
+                    }
+                }
+                else if(result.action === Share.dismissedAction){
+                    
+                }
+            }
+            catch(error){
+                Alert.alert(error.message)
+            }
+        }
+    }/>
+    )
+}
+
 
 const SearchLocations = () => {
     return(

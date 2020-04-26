@@ -39,6 +39,19 @@ const SearchLocations = () => {
     )
 }
 
+const list: any = []
+const LocationsList = () => {
+    return(
+        <View>
+            {list.map((l: any, i: number) =>{
+                <ListItem key={i}
+                title={l.name}
+                />
+            })}
+        </View>
+    )
+}
+
 export default class LocationsDisplay extends React.Component{
     state = {};
 

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Text, ScrollView, SectionList, View } from 'react-native';
+
+const settings: any = [{}]
+
 const SettingsSectionList = () => {
     return(
         <View>

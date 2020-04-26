@@ -3,6 +3,13 @@ import { Text, ScrollView, SectionList, View } from 'react-native';
 
 const settings: any = [{}]
 
+const SettingsItem = () => {
+    return(
+        <View>
+
+        </View>
+    )
+}
 const SettingsSectionList = () => {
     return(
         <View>

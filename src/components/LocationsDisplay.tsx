@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
-import {Text, Input} from 'react-native-elements'
+import { View, SectionList, Share, Alert } from 'react-native';
+import {Text, Input, ListItem, Icon} from 'react-native-elements'
 
 
 const SearchLocations = () => {
